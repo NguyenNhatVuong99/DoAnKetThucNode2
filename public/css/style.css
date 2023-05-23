@@ -1,0 +1,43 @@
+.card-header-table button{
+    float: right;
+    margin-left: 10px;
+}
+.card-header-table h2{
+    color: black;
+}
+.search-box {
+    position: relative;        
+    float: right;
+    margin-left: 10px;
+
+}
+.search-box input {
+    height: 38px;
+border-radius: 20px;
+padding-left: 35px;
+border-color: #ddd;
+box-shadow: none;
+}
+.search-box input:focus {
+    border-color: #3FBAE4;
+}
+.search-box i {
+    color: #a0a5b1;
+    position: absolute;
+    font-size: 19px;
+    top: 10px;
+    left: 10px;
+}
+table.table th i {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+table.table td a {
+    cursor: pointer;
+}
+table.table td.action {
+    /* display: flex; */
+    display: flex;
+    justify-content: space-around;
+}
