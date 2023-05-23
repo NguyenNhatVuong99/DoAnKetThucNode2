@@ -1,0 +1,12 @@
+import { Router, Request, Response } from "express";
+const router = Router();
+import EmployeeController from '../../controllers/api/EmployeeController';
+router.get("/", EmployeeController.index);
+router.get("/create", EmployeeController.create);
+router.post("/", EmployeeController.store);
+router.get("/:id", EmployeeController.show);
+router.get("/:id/edit", EmployeeController.edit);
+router.put("/:id", EmployeeController.update);
+router.delete("/:id", EmployeeController.destroy);
+// router.get("/destroyAll", controller.destroyAll);
+export default router;
