@@ -1,7 +1,7 @@
 'use strict';
-let { faker } = require('@faker-js/faker/locale/vi');
+// let { faker } = require('@faker-js/faker/locale/vi');
 const bcrypt = require('bcryptjs');
-const { v4: uuidv4 } = require('uuid');
+// const { v4: uuidv4 } = require('uuid');
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -16,32 +16,38 @@ module.exports = {
          * }], {});
          */
         await queryInterface.sequelize.query('SET FOREIGN_KEY_CHECKS = 0;');
-        await queryInterface.bulkDelete('users', null, { truncate: true, cascade: true });
+        await queryInterface.bulkDelete('user', null, { truncate: true, cascade: true });
         await queryInterface.sequelize.query('SET FOREIGN_KEY_CHECKS = 0;');
 
         var salt = bcrypt.genSaltSync(10)
         let hashPassword = await bcrypt.hashSync('nhatvuong99', salt);
         let data = []
-        for (let i = 0; i <= 2; i++) {
-            let object = {
-                id: uuidv4(),
-                email: faker.internet.email(),
-                password: hashPassword,
-                firstName: faker.person.firstName(),
-                lastName: faker.person.lastName(),
-            }
-            data.push(object)
-        }
+        // for (let i = 0; i <= 2; i++) {
+        //     let object = {
+        //         id: uuidv4(),
+        //         email: faker.internet.email(),
+        //         password: hashPassword,
+        //         firstName: faker.person.firstName(),
+        //         lastName: faker.person.lastName(),
+        //     }
+        //     data.push(object)
+        // }
         let user = {
-            id: uuidv4(),
             email: 'nhatvuong99@gmail.com',
             password: hashPassword,
             lastName: 'Nguyễn',
             firstName: 'Nhất Vương'
         }
+        let user1 = {
+            email: 'nhatvuong0699@gmail.com',
+            password: hashPassword,
+            lastName: 'Nguyễn',
+            firstName: 'Nhất'
+        }
         data.push(user)
+        data.push(user1)
 
-        await queryInterface.bulkInsert('users', data)
+        await queryInterface.bulkInsert('user', data)
     },
 
     async down(queryInterface, Sequelize) {

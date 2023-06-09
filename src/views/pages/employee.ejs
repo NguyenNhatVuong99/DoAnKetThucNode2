@@ -1,113 +1,180 @@
-<div class="container-fluid">
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<%- include ('../_include/_head') %>
 
-    <!-- Page Heading -->
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header card-header-table py-3">
-            <div class="row">
-                <div class="col-sm-4">
-                    <h2>Manager Employee</h2>
-                </div>
-                <div class="col-sm-8 ">
+    <body id="page-top">
 
-                    <div class="search-box">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" class="form-control" placeholder="Search&hellip;">
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <%- include ('../_include/_sidebar') %>
+
+                <!-- End of Sidebar -->
+
+                <!-- Content Wrapper -->
+                <div id="content-wrapper" class="d-flex flex-column">
+
+                    <!-- Main Content -->
+                    <div id="content">
+
+                        <!-- Topbar -->
+
+                        <%- include ('../_include/_topbar') %>
+
+                            <!-- End of Topbar -->
+
+                            <!-- Begin Page Content -->
+                            <div class="container-fluid">
+
+                                <!-- Page Heading -->
+                                <!-- DataTales Example -->
+                                <div class="card shadow mb-4">
+                                    <div class="card-header card-header-table py-3">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <h4>Manager Employee</h4>
+                                            </div>
+                                            <div class="col-sm-9 ">
+
+                                                <div class="search-box">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Search&hellip;">
+                                                </div>
+                                                <button type="button" class="btn btn-info add-new"><i
+                                                        class="fa fa-cloud-upload" aria-hidden="true"></i> Export
+                                                    Excel</button>
+                                                <button type="button" class="btn btn-info add-new"><i
+                                                        class="fa fa-cloud-download" aria-hidden="true"></i> Import
+                                                    Excel</button>
+                                                <button type="button" class="btn btn-info add-new" data-toggle="modal"
+                                                    data-target="#addModal"><i class="fa-solid fa-plus"></i> Add
+                                                    New</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered" id="dataTable" width="100%"
+                                                cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Position</th>
+                                                        <th>Office</th>
+                                                        <th>Age</th>
+                                                        <th>Start date</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Position</th>
+                                                        <th>Office</th>
+                                                        <th>Age</th>
+                                                        <th>Start date</th>
+                                                        <th>
+
+                                                        </th>
+                                                    </tr>
+                                                </tfoot>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Tiger Nixon</td>
+                                                        <td>System Architect</td>
+                                                        <td>Edinburgh</td>
+                                                        <td>61</td>
+                                                        <td>2011/04/25</td>
+                                                        <td class="action">
+                                                            <a class="edit" title="Edit" data-toggle="modal"
+                                                                data-target="#updateModal">
+                                                                <i class="fa-solid fa-pen" style="color: #FFC107;"></i>
+                                                            </a>
+                                                            <a class="delete" title="Delete" data-toggle="tooltip">
+                                                                <i class="fa-solid fa-trash" style="color:#E34724"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="modal fade" id="addModal" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ...
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="updateModal" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ...
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.container-fluid -->
+
                     </div>
-                    <button type="button" class="btn btn-info add-new"><i class="fa fa-cloud-upload"
-                            aria-hidden="true"></i> Export Excel</button>
-                    <button type="button" class="btn btn-info add-new"><i class="fa fa-cloud-download"
-                            aria-hidden="true"></i> Import Excel</button>
-                    <button type="button" class="btn btn-info add-new" data-toggle="modal" data-target="#addModal"><i class="fa-solid fa-plus"></i> Add New</button>
+                    <!-- End of Main Content -->
+
+                    <!-- Footer -->
+                    <%- include ('../_include/_footer') %>
+
+                        <!-- End of Footer -->
+
                 </div>
-            </div>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>
+                <!-- End of Content Wrapper -->
 
-                            </th>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td class="action">
-                                <a class="edit" title="Edit"  data-toggle="modal" data-target="#updateModal">
-                                    <i class="fa-solid fa-pen" style="color: #FFC107;"></i>
-                                </a>
-                                <a class="delete" title="Delete" data-toggle="tooltip">
-                                    <i class="fa-solid fa-trash" style="color:#E34724"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
-            </div>
         </div>
-    </div>
+        <!-- End of Page Wrapper -->
 
-</div>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
 
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+        <!-- Logout Modal-->
+
+        <%- include ('../_include/_script') %>
+
+
+    </body>
+
+</html>

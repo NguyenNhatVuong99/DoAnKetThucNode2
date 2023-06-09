@@ -1,0 +1,199 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Api quản lý nhân sự, chấm công",
+        "version": "1.0.6",
+        "title": "Manager Human Resoure "
+    },
+    "schemes": [
+        "http"
+    ],
+    "host": "localhost:3000",
+    "paths": {
+        "/": {
+            "get": {
+                "tags": [
+                    "Render Page"
+                ],
+                "description": "Render Home Page",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "render login page"
+                    },
+                    "404": {
+                        "description": "render error page"
+                    }
+                }
+            }
+        },
+        "/auth": {
+            "get": {
+                "tags": [
+                    "Render Page"
+                ],
+                "description": "Render Login/Register Page",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "render login page"
+                    },
+                    "404": {
+                        "description": "render error page"
+                    }
+                }
+            }
+        },
+        "/admin": {
+            "get": {
+                "tags": [
+                    "Render Page"
+                ],
+                "description": "Render Admin Page",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "render login page"
+                    },
+                    "404": {
+                        "description": "render error page"
+                    }
+                }
+            }
+        },
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "Authenication API"
+                ],
+                "description": "Create New User Account",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Email",
+                        "in": "path",
+                        "description": "User Email Address",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "Full Name",
+                        "in": "path",
+                        "description": "User Full Name",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "Password",
+                        "in": "path",
+                        "description": "User Password",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Verify User Email Address"
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Authenication API"
+                ],
+                "description": "Login User Account",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Email",
+                        "in": "path",
+                        "description": "User Email Address",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "Password",
+                        "in": "path",
+                        "description": "User Password",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Verify User Email Address"
+                    }
+                }
+            }
+        },
+        "/verify?token={token}&email={email}": {
+            "post": {
+                "tags": [
+                    "Authenication API"
+                ],
+                "description": "Verify User Account",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Token",
+                        "in": "path",
+                        "description": "User Token",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "Email",
+                        "in": "path",
+                        "description": "User Email",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Verified"
+                    }
+                }
+            }
+        }
+    }
+}

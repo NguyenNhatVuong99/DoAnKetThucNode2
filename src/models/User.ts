@@ -1,54 +1,28 @@
 import { Sequelize, DataTypes, Model } from "sequelize";
 import { sequelize } from '../config/connectDB';
-import IUser from "../interfaces/IUser";
+
 class User extends Model {
+
 }
 
 
 User.init({
     // Model attributes are defined here
-    id: {
-        type: DataTypes.UUID,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
-    },
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-    },
+    email: DataTypes.STRING,
     password: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true, // Cho phép giá trị null
     },
-    firstName: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    lastName: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    status: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: 1
-    },
-    createdAt: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
-    },
-    updatedAt: {
-        type: DataTypes.DATE,
-        allowNull: true,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
-    }
-
+    firstName: DataTypes.STRING,
+    lastName: DataTypes.STRING,
+    avatarUrl: DataTypes.STRING,
+    provider: DataTypes.STRING,
+    providerId: DataTypes.STRING,
 }, {
     // Other model options go here
     sequelize, // We need to pass the connection instance
-    modelName: 'User' // We need to choose the model name
+    modelName: 'User', // We need to choose the model name
+    tableName: 'User'
 });
 
 export default User;

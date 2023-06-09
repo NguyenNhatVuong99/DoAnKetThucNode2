@@ -1,10 +1,12 @@
+// src/models/user.ts
 interface IUser {
-    id: number,
-    email: string,
-    firstName: string,
-    lastName: string,
-    status: boolean | 1,
-    createdAt: Date,
-    updatedAt: Date
+    id: number;
+    email: string;
+    password: string;
+    firstName: string;
+    lastName: string;
+    avatarUrl: string;
+    provider: string;
+    providerId: string;
 }
 export default IUser
